@@ -2,8 +2,9 @@ import type { NextPage } from 'next'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import {client} from "../contentfull";
+import {IHome, IHomeFields} from "../contentful";
 
-export default function Home ({title, home}: {title: string, home: any}) {
+export default function Home ({title, home}: {title: string, home: IHome}) {
     console.log(home)
   return (
     <div>
@@ -19,7 +20,7 @@ export default function Home ({title, home}: {title: string, home: any}) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const home = await client.getEntries({
+    const home = await client.getEntries<IHomeFields>({
         content_type: 'home',
         limit: 1
     })
