@@ -1,10 +1,10 @@
 import React from 'react';
-import {GetStaticProps, GetStaticPaths} from 'next'
+import {GetStaticProps, GetStaticPaths, GetServerSideProps} from 'next'
 import {client} from "../../contentfull/index";
 import {IArticle, IArticleFields} from "../../contentful";
 import Head from 'next/head'
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer"
-import {Container, Row, Col, Card, CardTitle, CardText, Button} from 'reactstrap'
+import {Container} from 'reactstrap'
 
 export default function Article ({article}: {article: IArticle}) {
     return (
@@ -32,7 +32,7 @@ export const getStaticPath: GetStaticPaths = async () => {
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
+export const getServerSideProps: GetServerSideProps = async ({params}) => {
     const slug = params!.article!;
     const articleEntries = await client.getEntries<IArticleFields>({
         content_type: 'article',
