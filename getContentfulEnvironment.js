@@ -2,7 +2,7 @@ const contentfulManagement = require("contentful-management")
 
 module.exports = function() {
   const contentfulClient = contentfulManagement.createClient({
-    accessToken: 'CFPAT--d3GKwkSBGYbS8vfqCleDXr8koq8F6BTpmWPp_o_4KA',
+    accessToken: 'CFPAT-U9W3QT86kftZkXrrWDRO2kJmTcOidK_d72d8hqZ6sYA',
   })
 
   return contentfulClient

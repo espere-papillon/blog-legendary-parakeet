@@ -10,10 +10,13 @@
     "contentful-typescript-codegen": "contentful-typescript-codegen --output contentful.d.ts"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.2.0",
+    "bootstrap": "^5.1.0",
     "contentful": "^8.5.3",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "reactstrap": "^8.10.0"
   },
   "devDependencies": {
     "@types/react": "17.0.19",
